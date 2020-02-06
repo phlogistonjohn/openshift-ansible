@@ -54,6 +54,7 @@
       HEKETI_EXECUTOR: "{{ glusterfs_heketi_executor }}"
       HEKETI_FSTAB: "{{ glusterfs_heketi_fstab }}"
       CLUSTER_NAME: "{{ glusterfs_name }}"
+      HEKETI_LVM_WRAPPER: "{% if glusterfs_is_native | bool %}{{ glusterfs_heketi_lvm_wrapper }}{% endif %}"
 
 - name: Wait for heketi pod
   oc_obj:
