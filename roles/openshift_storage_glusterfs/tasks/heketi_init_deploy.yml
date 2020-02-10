@@ -1,7 +1,7 @@
 ---
 - name: Generate initial heketi resource files
-  template:
-    src: "deploy-heketi-template.yml.j2"
+  copy:
+    src: "deploy-heketi-template.yml"
     dest: "{{ mktemp.stdout }}/deploy-heketi-template.yml"
 
 - name: deploy-heketi template
